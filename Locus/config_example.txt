@@ -1,0 +1,9 @@
+task=all
+Project=ZXing
+Version=all
+repoDir=D:\thesis\data\derby
+sourceDir=D:\thesis\data\derby\source
+workingLoc=D:\thesis\Bench4BL\expresults\commit_derby\
+bugReport=D:\thesis\data\derby\bugrepo\repository.xml
+changeOracle=D:\thesis\Bench4BL\expresults\commit_derby\
+revisionsLoc=D:\thesis\data\derby\code

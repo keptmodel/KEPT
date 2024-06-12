@@ -1,0 +1,85 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: eval",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/trace/main/eval_trace_rapt.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--cmp",
+                "false",
+                "--data_dir",
+                "/home/yueli/HuYworks/KEPLMBUG/Input Data/data_hunk/JGroups",
+                "--model_path",
+                "${workspaceFolder}/output/JGroups",
+                "--output_dir",
+                "${workspaceFolder}/resultdebug/JGroups",
+                "--code_bert",
+                "${workspaceFolder}/trace/unixCoder",
+                "--per_gpu_eval_batch_size",
+                "4",
+                "--code_kg_location",
+                "/home/yueli/HuYworks/KEPLMBUG/Input Data/data_hunk/JGroups/",
+                "--text_kg_location",
+                "/home/yueli/HuYworks/KEPLMBUG/Input Data/data_hunk/JGroups/"
+            ],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "/root/KEPLMBUG/Source Code:${env:PYTHONPATH}",
+                "CUDA_VISIBLE_DEVICES": "3"
+            }
+        },
+        {
+            "name": "Python: train",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/trace/main/train_trace_rapt.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--seed",
+                "40",
+                "--data_dir",
+                "/home/yueli/HuYworks/KEPLMBUG/Input Data/data_hunk/JGroups",
+                "--output_dir",
+                "${workspaceFolder}/trace/main/output",
+                "--model_path",
+                "${workspaceFolder}/trace/main/model",
+                "--per_gpu_train_batch_size",
+                "8",
+                "--per_gpu_eval_batch_size",
+                "8",
+                "--logging_steps",
+                "50",
+                "--gradient_accumulation_steps",
+                "1 ",
+                "--num_train_epochs",
+                "4",
+                "--learning_rate",
+                "4e-5",
+                "--code_bert",
+                "${workspaceFolder}/trace/unixCoder",
+                "--hard_ratio",
+                "0.5",
+                "--code_kg_location",
+                "/home/yueli/HuYworks/KEPLMBUG/Input Data/data_hunk/JGroups/",
+                "--text_kg_location",
+                "/home/yueli/HuYworks/KEPLMBUG/Input Data/data_hunk/JGroups/",
+                "--mode",
+                "train"
+            ],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "/root/KEPLMBUG/Source Code:${env:PYTHONPATH}",
+                "CUDA_VISIBLE_DEVICES": "2",
+                "CUDA_LAUNCH_BLOCKING": "1"
+            }
+        }
+    ]
+}

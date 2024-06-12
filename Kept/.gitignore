@@ -1,0 +1,10 @@
+trace/main/output/WildFlyCore/optimizer.pt
+trace/main/output
+trace/runs
+*.pyc
+trace/main/result
+*.xlsx
+trace/main/result.xlsx
+summary.txt
+*.log
+input_data
